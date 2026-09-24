@@ -24,11 +24,3 @@
 #     message.append(ToolMessage(content=str(result), tool_call_id=tool["id"]))
 # final=llm.invoke(message)
 # print(final.content)
-from langchain_tavily import TavilySearch
-
-web_search = TavilySearch(
-    max_results=5,
-    topic="general",
-)
-result = web_search.invoke({"query":"What is the latest news on AI?"})
-print(result)

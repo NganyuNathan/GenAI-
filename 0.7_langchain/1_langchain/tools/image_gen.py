@@ -1,4 +1,4 @@
-# from langchain_core.tools import tool
+from langchain_core.tools import tool
 import urllib.parse
 import requests
 import os
@@ -13,7 +13,7 @@ def generate_image(prompt:str)->str:
     
     """
     encoded = urllib.parse.quote(prompt)
-    url=f"https//image.pollinations.ai/prompt/{encoded}?width=1024&height=1024&nologo=true"
+    url = f"https://image.pollinations.ai/prompt/{encoded}?width=1024&height=1024"
     response=requests.get(url, timeout=60)
     response.raise_for_status()
     os.makedirs("generated_images", exixt_ok=True)
